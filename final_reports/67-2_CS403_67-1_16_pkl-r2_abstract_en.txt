@@ -1,0 +1,25 @@
+เว็บแอปพลิเคชันสำหรับการวางแผนการเดินทาง
+TRIP PLANNING WEB APPLICATION
+
+    PlanMyTrip is a web application developed to assist users in efficiently planning travel routes across multiple 
+locations by determining the sequence that results in the shortest total travel time. 
+Users can input up to 10 destinations and customize key parameters such as departure time, 
+mode of transportation (e.g., driving or walking), 
+and preferences like avoiding toll roads. The system aims to offer flexible, real-world planning by 
+taking user-defined constraints into account.The application features an autocomplete input powered 
+by the Google Places API to ensure fast and accurate location entry. Once the user provides the necessary information, 
+the system retrieves travel time and route data using the Google Maps Directions API. It then processes this data using 
+the A* (A-Star) algorithm to determine the optimal visiting order. 
+	Furthermore, it checks the opening and closing hours of each location using the Google Places Details API 
+to eliminate infeasible routes based on time constraints. After processing, the application presents the most time-efficient 
+travel plan first, along with route details such as place names, distances, and estimated travel durations.
+A key feature allows users to open the entire optimized route directly in Google Maps via a generated link eliminating 
+the need to re-enter destinations manually. PlanMyTrip is ideal for tourists, sales representatives, or anyone needing 
+to visit multiple places in a single day, providing a streamlined, accurate planning experience accessible from any device.
+This project aimed to propose a practical approach to applying web applications in travel planning. The results demonstrate
+that the project successfully achieved its objectives: reducing the time required for travel planning and 
+generating route sequences based on user-defined conditions. Moreover, the system was developed within the defined scope, 
+including one-day trip support, responsive interface design, and efficient integration of Google Maps APIs. These outcomes 
+confirm the feasibility and effectiveness of using web-based technologies for optimized travel planning.
+Keywords: Web application, trip planning, Google Maps API
+
