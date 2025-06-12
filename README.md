@@ -24,9 +24,10 @@ git clone https://github.com/ComSciThammasatU/2567-2-cs403-final-submission-67-1
 cd planmytrip-main  
 
 2. ติดตั้ง backend  
-cd server  
+cd server
+npm install -g nodemon
 
-3. ติดตั้ง frontend  
+4. ติดตั้ง frontend  
 cd ../client  
 npm install  
 
