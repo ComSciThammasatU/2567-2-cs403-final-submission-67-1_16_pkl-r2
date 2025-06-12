@@ -1,0 +1,569 @@
+/*body, html {
+    min-height: 100vh; /* ความสูงขั้นต่ำเต็มจอ */
+    /*overflow-x: hidden;
+}*/
+  
+/*#root {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}*/
+
+
+/* Desktop (คอมพิวเตอร์) */
+.postimage {
+    position: absolute;
+    width: 100%;
+    height: 45vh;
+    z-index: 0;
+}
+  
+.postimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0px 0px 0px 50px;
+}
+
+.overlay-content {
+    position: relative;
+    /*top: 8vh;*/
+    top: 3rem;
+    /*left: 0;*/
+    width: 100%;
+    /* height: 100%; */
+    z-index: 5;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ตรงกลาง */
+    color: white;
+
+}
+
+.main-wrap{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+    
+.main-content {
+    flex: 1;
+    width: 100%;
+    /*min-height: 95vh;*/
+    padding:4rem 0 3rem 0; /* เพิ่ม padding ล่างเยอะพอให้ครอบ .main-box */
+    position: relative; /* สำคัญมาก เพื่อให้ absolute ผูกกับตรงนี้ */
+    text-align: center;
+}
+  
+.main-content .Title {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+}
+  
+.box {
+    width: 75%;
+    margin: 40px auto;
+    text-align: center;
+    align-self: center;
+    position: relative;
+    /*background-color: aqua;*/
+}  
+  
+.category-box {
+    width: 75%;
+    height: 3rem;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    /* grid-template-columns: auto auto; */
+    grid-template-columns: repeat(3, 1fr);
+}
+  
+.category-botton {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 0px; 
+    padding: 10px 15px; 
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+    border-color: transparent;
+    
+}
+
+.category-botton i {
+    color: #222;
+    margin: 0 8px;
+    font-size: larger;
+}
+  
+.category-botton input {
+    opacity: 0; 
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+  
+.category-botton .type {
+    color: #222;
+    cursor: pointer;
+}
+  
+/* เปลี่ยนสีเมื่อคลิก */
+.category-botton input:checked ~ i {
+    color: #4070FF !important; /* เปลี่ยนสีไอคอน */
+}
+  
+.category-botton input:checked ~ .type {
+    color: #4070FF !important; /* เปลี่ยนสีข้อความ */
+}
+  
+.main-box {
+  width: 100%;
+  min-height: 350px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem 0;
+  margin-top: -20px; /* ดึงขึ้นไปซ้อนรูป */
+  position: relative; /* ใช้ relative แทน absolute */
+  z-index: 2;
+}
+  
+/* กล่องเลือกวันที่และเวลา */
+.date-time {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 1rem 9rem;
+    height: 3rem;
+    border-radius: 8px;
+    border: 2px solid #D9D9D9; /* ขอบ */
+}
+
+/* ป้ายวันที่ */
+.date-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-right: 1px solid #c4c5c6;
+    cursor: pointer;
+}
+
+/* ป้ายเวลา */
+.time-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-left: 1px solid #c4c5c6;
+    cursor: pointer;
+}
+
+
+
+/* สไตล์สำหรับ DatePicker */
+.custom-date-picker .date-picker {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    text-align: center;
+    border: none; /* เอากรอบออก */
+    
+}
+
+/* เมื่อ DatePicker โฟกัส */
+.custom-date-picker .date-picker:focus {
+    border-color: #007bff;
+    outline: none; /* ไม่มีเส้นขอบ */
+}
+
+/* สไตล์สำหรับ Select (เวลา) ให้เหมือน DatePicker */
+.custom-time-picker select {
+    /* width: 100%; */
+    /* max-width: 200px; จำกัดขนาดความกว้างให้พอดี */
+    padding: 10px 15px;
+    font-size: 16px;
+    color: black;
+    background-color: transparent;
+    border: 2px solid #D9D9D9; /* ขอบที่สวยงาม */
+    border-radius: 6px; /* มุมมน */
+    outline: none;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* เพิ่มการเปลี่ยนสี */
+}
+
+.time-wrapper .styled-select {
+    width: 100%;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* เพิ่มการเปลี่ยนสี */
+}
+
+/* ปรับสไตล์ตัวเลือกภายใน dropdown (option) */
+.custom-time-picker select option {
+    max-height: 50px; /* จำกัดความสูงของ dropdown */
+    overflow-y: auto; /* เพิ่มการเลื่อนหากมีตัวเลือกมาก */
+    display: block; /* แสดงตัวเลือกในบล็อก */
+}
+
+/* เมื่อเลือก option แล้ว */
+.custom-time-picker select option:hover {
+    background-color: #f0f0f0; /* เปลี่ยนพื้นหลังเมื่อวางเมาส์ */
+}
+
+/* เมื่อ Select โฟกัส */
+.custom-time-picker select:focus {
+    border-color: #007bff;
+    
+}
+
+/* รูปแบบเมื่อไม่ได้เลือกเวลา (placeholder) */
+.custom-time-picker select:disabled {
+    color: #999;
+}
+
+/* กรอบเมื่อเลือกแล้ว */
+.styled-select:focus {
+    border: 1px solid #007bff;
+}
+
+/* ป้ายเวลาและวันที่ */
+.date-wrapper i,
+.time-wrapper i {
+    font-size: large;
+    color: #6F6F6F;
+    margin: 0 10px;
+}
+
+/* ป้ายข้อความเวลาและวันที่ */
+.date-wrapper input,
+.time-wrapper select {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #6F6F6F;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.styled-select.no-border {
+    border: none;
+}
+
+.submit-button {
+    background-color: #007bff;
+    height: 3rem;
+    width: 50%;
+    border-radius: 8px;
+    font-size: medium;
+    color: #FFFFFF;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, tranform 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.hiddenpage {
+    display: none;
+    padding-bottom: 2rem;
+}
+
+
+.result-section {
+    position: relative;
+    margin: 2rem 0;
+}
+
+
+
+  /* เพิ่ม CSS สำหรับ popup */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังมืด */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .popup-box {
+    background-color: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .popup-box h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .popup-message {
+    white-space: normal;      /* บรรทัดตัดอัตโนมัติ */
+    word-wrap: break-word;    /* ตัดคำหากเกิน */
+    overflow-wrap: break-word;
+    color: #444;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Prompt', sans-serif; /* ตัวอย่างใช้ Prompt */
+  }
+  
+  .popup-close {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+  }
+  
+  .popup-close:hover {
+    background-color: #0056b3;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .popup-confirm {
+    padding: 0.5rem 1.2rem;
+    background-color: #28a745; /* เขียว */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .popup-confirm:hover {
+    background-color: #1e7e34;
+  }
+
+/* Modal styles */
+/*
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .confirm-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+
+*/
+
+/*
+ /\_/\      /\_/\     |==============|   /\_/\      /\_/\      
+( •‿• )♡  ( •‿• )♡  |  RESPONSIVE  |  ( •‿• )♡  ( •‿• )♡  
+ > ^ <      > ^ <     |==============|   > ^ <      > ^ <      
+*/
+
+/* Tablet Landscape (iPad Pro, iPad แนวนอน) */
+@media (min-width: 1025px) and (max-width: 1368px) and (orientation: landscape) {
+    /* iPad Pro แนวนอน, อาจรวมถึง Macbook Air */
+    .postimage {
+        height: 40vh;
+    }
+    
+    .overlay-content {
+        top: 7vh;
+    }
+        
+    .main-content {
+        min-height: 95vh;
+    }
+      
+    .main-content .Title {
+        padding: 2vh ;
+    }
+      
+    .box {
+        margin: 50px auto;
+    }  
+    
+}
+
+/* Tablet Portrait (แท็บเล็ตแนวตั้ง) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* รูปแบบสำหรับ Tablet */
+    .postimage {
+        height: 30vh;
+    }
+        
+    .main-content {
+        padding: 4rem 0 3rem 0; /* เพิ่ม padding ล่างเยอะพอให้ครอบ .main-box */
+    }
+      
+    /* กล่องเลือกวันที่และเวลา */
+    .date-time {
+        margin: 1rem 4rem;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .date-wrapper,.time-wrapper{
+        min-width: 220px;
+    }
+    
+    .submit-button {
+        background-color: #007bff;
+        height: 3rem;
+        width: 50%;
+        border-radius: 8px;
+        font-size: medium;
+        color: #FFFFFF;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, tranform 0.2s;
+    }
+    
+    .submit-button:hover {
+        background-color: #0056b3;
+    }
+    
+}
+
+
+/* Mobile (โทรศัพท์มือถือ) */
+@media (max-width: 767px) {
+    /* รูปแบบสำหรับ Mobile */
+    .postimage {
+        height: 40vh;
+    }
+      
+    .postimage img {
+        border-radius: 0px 0px 0px 30px;
+    }
+        
+    .main-content {
+        padding: 4rem 0 1rem 0; 
+    }
+      
+    .main-content .Title {
+        font-size: x-large;
+    }
+      
+    .box {
+        width: 80%;
+        margin: 30px auto;
+    }  
+      
+    .category-box {
+        width: 80%;  
+    }
+
+    /* .category-botton{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 0;
+    } */
+
+    .category-box .type{
+        display: none;
+        /* display: block; */
+    }
+
+    .main-box {
+        padding: 20px 0;
+    }
+      
+    /* กล่องเลือกวันที่และเวลา */
+    .date-time {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 1rem;
+        height: fit-content;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .time-wrapper .styled-select {
+        width: 100%;
+    }
+    
+    .submit-button {
+        width: 90%;
+    }
+
+    .result-wrapper {
+        padding-bottom: 1rem;
+    }
+    
+}
+  
+    
