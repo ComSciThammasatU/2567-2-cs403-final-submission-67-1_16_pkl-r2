@@ -18,33 +18,31 @@ Manual / Instructions for your projects starts here !
 ---
 ## การติดตั้งและตั้งค่า 
 
-**การตั้งค่าต่างๆ**  
-1. Clone โปรเจกต์
-git clone https://github.com/ComSciThammasatU/2567-2-cs403-final-submission-67-1_16_pkl-r2.git
-cd planmytrip-main
+**การตั้งค่าต่างๆ**   
+1. Clone โปรเจกต์  
+git clone https://github.com/ComSciThammasatU/2567-2-cs403-final-submission-67-1_16_pkl-r2.git  
+cd planmytrip-main  
 
-2.ติดตั้ง backend
-cd server
+2. ติดตั้ง backend  
+cd server  
 
-3.ติดตั้ง frontend
-cd ../client
-npm install
+3. ติดตั้ง frontend  
+cd ../client  
+npm install  
 
-**การรัน frontend และ backend**  
-1. รัน Backend
+**การรัน frontend และ backend**   
+1. รัน Backend  
+cd  server  
+nodemon server.js  
 
-cd  server
-nodemon server.js
-
-### รัน Frontend 
-เปิด terminal ใหม่
-cd ../client
-npm run dev
+2. รัน Frontend  
+เปิด terminal ใหม่  
+cd ../client  
+npm run dev  
 จากนั้นเปิดเบราว์เซอร์ที่ http://localhost:5173 
 
 
 ## วิธีการใช้งาน
-
 เว็บแอปพลิเคชัน Plan My Trip จะมีหน้าการใช้งานอยู่ 3 หน้า คือ หน้าหลัก หนัาวิธีการใช้งาน และหน้าวางแผนการเดินทาง ซึ่งจะสามารถวางแผนการเดินทางได้ที่หน้าวางแผนการเดินทาง โดยต้องกรอกข้อมูลดังต่อไปนี้  
 1. ประเภทการเดินทาง (รถยนต์, รถสาธารณะ, เดินเท้า)  
 2. วันที่จะเดินทาง  
