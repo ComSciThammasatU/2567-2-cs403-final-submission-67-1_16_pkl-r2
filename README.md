@@ -18,7 +18,7 @@ Manual / Instructions for your projects starts here !
 
 # การติดตั้งและตั้งค่า 
 
-**การติดตั้ง**   
+### การติดตั้ง  
 1. Clone โปรเจกต์  
 git clone https://github.com/ComSciThammasatU/2567-2-cs403-final-submission-67-1_16_pkl-r2.git  
 cd planmytrip-main2  
@@ -37,7 +37,9 @@ api key ตัวนี้มีการ restrict เพื่อความ�
 - Maps JavaScript API
 - Geocoding API
 - Distance Matrix API
-- Directions API  
+- Directions API
+
+ 
 เมื่อทำการสร้าง key แล้ว คัดลอกแล้วนำไปวางในไฟล์ .env ที่อยู่ในโฟลเดอร์ server
 
 
@@ -45,7 +47,7 @@ api key ตัวนี้มีการ restrict เพื่อความ�
 cd ../client  
 npm install  
 
-**การรัน frontend และ backend**   
+### การรัน frontend และ backend   
 1. รัน Backend  
 cd  server  
 nodemon server.js  
