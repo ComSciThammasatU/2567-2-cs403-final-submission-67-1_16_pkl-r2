@@ -73,7 +73,7 @@ npm run dev
 # ในกรณีที่เกิด Request Denied
 ในกรณีที่เมื่อประมวลผลแล้ว เกิด Request Denied อาจเกิดได้หลายสาเหตุดังนี้  
 **1. Environment Variables ไม่ถูกต้อง**  
-- Goofle map api key อาจไม่ได้ถูกโหลดหรืออาจจะมีค่าไม่ถูกต้อง
+- Google maps api key อาจไม่ได้ถูกโหลดหรืออาจจะมีค่าไม่ถูกต้อง
 
    
 **2. character Encording Issues**  
