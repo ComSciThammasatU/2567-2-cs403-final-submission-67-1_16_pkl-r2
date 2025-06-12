@@ -30,14 +30,14 @@ npm install -g nodemon
 3.การตั้งค่า google api key
 api key ตัวนี้มีการ restrict เพื่อความปลอดภัย สามารถสร้างใหม่ได้ด้วยที่ [Google console](https://console.cloud.google.com) สามารถสร้าง api key ได้ตามคลิปที่ได้แนบไว้ดังนี้ [How to สร้าง Google Maps APIs Key ภายในไม่กี่นาที!! | The Maps Tangerine EP. 9](https://youtu.be/MtltbXoDQ5M?si=pcal7bDrFEo4Ggr4)  
 โดย api ที่ได้เปิดใช้มีทั้งหมด 8 ตัว คือ 
-   3.1 Places API
-   3.2 Places API (New)
-   3.3 Route Optimization API
-   3.4 Routes API
-   3.5 Maps JavaScript API
-   3.6 Geocoding API
-   3.7 Distance Matrix API
-   3.8 Directions API
+   3.1 Places API  
+   3.2 Places API (New)  
+   3.3 Route Optimization API  
+   3.4 Routes API  
+   3.5 Maps JavaScript API  
+   3.6 Geocoding API  
+   3.7 Distance Matrix API  
+   3.8 Directions API  
 เมื่อทำการสร้าง key แล้ว คัดลอกแล้วนำไปวางในไฟล์ .env ที่อยู่ในโฟลเดอร์ server
 
 
