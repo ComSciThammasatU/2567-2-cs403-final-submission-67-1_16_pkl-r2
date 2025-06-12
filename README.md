@@ -18,7 +18,7 @@ Manual / Instructions for your projects starts here !
 ---
 ## การติดตั้งและตั้งค่า 
 
-**การตั้งค่าต่างๆ**   
+**การติดตั้ง**   
 1. Clone โปรเจกต์  
 git clone https://github.com/ComSciThammasatU/2567-2-cs403-final-submission-67-1_16_pkl-r2.git  
 cd planmytrip-main  
