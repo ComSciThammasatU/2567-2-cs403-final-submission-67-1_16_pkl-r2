@@ -27,7 +27,7 @@ cd planmytrip-main
 cd server
 npm install -g nodemon
 
-3.การตั้งค่า google api key
+3.การตั้งค่า google api key  
 api key ตัวนี้มีการ restrict เพื่อความปลอดภัย สามารถสร้างใหม่ได้ด้วยที่ [Google console](https://console.cloud.google.com) สามารถสร้าง api key ได้ตามคลิปที่ได้แนบไว้ดังนี้ [How to สร้าง Google Maps APIs Key ภายในไม่กี่นาที!! | The Maps Tangerine EP. 9](https://youtu.be/MtltbXoDQ5M?si=pcal7bDrFEo4Ggr4)  
 โดย api ที่ได้เปิดใช้มีทั้งหมด 8 ตัว คือ 
 - Places API
