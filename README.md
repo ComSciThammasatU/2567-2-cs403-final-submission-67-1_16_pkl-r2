@@ -72,11 +72,11 @@ npm run dev
 
 # ในกรณีที่เกิด Request Denied
 ในกรณีที่เมื่อประมวลผลแล้ว เกิด Request Denied อาจเกิดได้หลายสาเหตุดังนี้  
-1. Environment Variables ไม่ถูกต้อง
+**1. Environment Variables ไม่ถูกต้อง**
 - Goofle map api key อาจไม่ได้ถูกโหลดหรืออาจจะมีค่าไม่ถูกต้อง
-2. character Encording Issues
+**2. character Encording Issues**
 - git อาจเปลี่ยน line endings
 - special character ใน URL อาจถูกเปลี่ยน
-3. API Quota / Rate Limiting
-4. Network Issues
+**3. API Quota / Rate Limiting**
+**4. Network Issues**
 หากเกิด Request Denied ในฟังก์ชัน **getAllPairDistances** ในไฟล์ apiRoutes.js ในโฟล์เดอร์ server/routes อาจเกิดจากกรณี **2. character Encording Issues** ให้ลองคัดลอกฟังค์ชัน getAllPairDistances แล้ววางใหม่อีกครั้ง
