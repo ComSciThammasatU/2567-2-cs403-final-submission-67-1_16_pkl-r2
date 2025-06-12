@@ -21,7 +21,7 @@ Manual / Instructions for your projects starts here !
 **การติดตั้ง**   
 1. Clone โปรเจกต์  
 git clone https://github.com/ComSciThammasatU/2567-2-cs403-final-submission-67-1_16_pkl-r2.git  
-cd planmytrip-main  
+cd planmytrip-main2  
 
 2. ติดตั้ง backend  
 cd server
